@@ -457,11 +457,8 @@ function getIndicesOfOddNumbers(numbers) {
  */
 function getHexRGBValues(arr) {
   return arr.map((number) => {
-    const hex = number.toString(16).padStart(6, '0');
-    return `#${hex.substring(0, 2)}${hex.substring(2, 4)}${hex.substring(
-      4,
-      6
-    )}`;
+    const hex = number.toString(16).padStart(6, '0').toUpperCase();
+    return `#${hex}`;
   });
 }
 
