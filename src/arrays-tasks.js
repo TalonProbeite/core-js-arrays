@@ -21,11 +21,7 @@
  *    getIntervalArray(3, 3) => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  const res = [];
-  for (let i = start; i <= end; i += 1) {
-    res.push(i);
-  }
-  return res;
+  return Array.from({ length: end - start + 1 }, (_, i) => start + i);
 }
 
 /**
@@ -42,14 +38,8 @@ function getIntervalArray(start, end) {
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
 function sumArrays(arr1, arr2) {
-  const result = [];
   const len = Math.max(arr1.length, arr2.length);
-  for (let i = 0; i < len; i += 1) {
-    const value1 = arr1[i] !== undefined ? arr1[i] : 0;
-    const value2 = arr2[i] !== undefined ? arr2[i] : 0;
-    result.push(value1 + value2);
-  }
-  return result;
+  return Array.from({ length: len }, (_, i) => (arr1[i] || 0) + (arr2[i] || 0));
 }
 
 /**
@@ -65,12 +55,7 @@ function sumArrays(arr1, arr2) {
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
 function findElement(arr, value) {
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] === value) {
-      return i;
-    }
-  }
-  return -1;
+  return arr.indexOf(value);
 }
 
 /**
