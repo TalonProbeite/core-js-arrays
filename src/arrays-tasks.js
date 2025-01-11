@@ -206,6 +206,8 @@ function getHead(arr, n) {
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
 function getTail(arr, n) {
+  if (n === 0) return [];
+  if (n > arr.length) return arr; // Если n больше длины, возвращаем весь массив
   return arr.slice(-n);
 }
 
